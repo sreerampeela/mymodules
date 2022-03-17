@@ -17,9 +17,10 @@ ext             Extension for the shovill output folder. Default: _shovill"""
 
 import os
 
-wd = input("Enter the working directory: ")
-os.chdir("{}".format(wd))
-print("Directory set to: {}".format(wd))
+
+def set_wd(wd):
+    os.chdir("{}".format(wd))
+    print("Directory set to: {}".format(wd))
 
 
 def get_ids(infile):
