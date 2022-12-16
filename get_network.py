@@ -12,11 +12,8 @@ def cluster_proteins(prot_seqs_files):
     for fasta in prot_seqs_files:
         records = SeqIO.parse(fasta,"fasta")
         for record in records:
-            id = record.id.upper()
-            
-            if id.startswith("SP") is True:
-                seqrec = SeqRecord(record.seq,id=record.id)
-                all_prots.append(seqrec)
+            seqrec = SeqRecord(record.seq,id=record.id)
+            all_prots.append(seqrec)
             
     with open("total_prots.fasta",'a') as fout:
         for rec in all_prots:
