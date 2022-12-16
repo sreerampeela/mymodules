@@ -43,7 +43,7 @@ def sra_script_gen(wd, ids, start, end, outfile):
     return f2
 
 
-def shovill_script_gen(wd, fname, dwnld, cpus=8, depth=150, ext="_shovill"):
+def shovill_script_gen(wd, fname, dwnld, cpus=8, depth=100, ext="_shovill"):
     with open(fname, 'w', newline='\n', encoding='utf-8') as f3:
         for id in dwnld:
             acc_f = id + "_1.fastq.gz"
