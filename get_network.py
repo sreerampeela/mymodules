@@ -18,7 +18,7 @@ def cluster_proteins(prot_seqs_files):
     with open("total_prots.fasta",'a') as fout:
         for rec in all_prots:
             SeqIO.write(rec,fout,"fasta")
-    cmd = f"/mnt/d/cd-hit-v4.8.1-2019-0228/cd-hit -i total_prots.fasta -o spn_clustered_prots.fasta -c 0.9 -T 4 -p 1" #add full path to CD-HIT
+    cmd = f"/mnt/d/cd-hit-v4.8.1-2019-0228/cd-hit -i total_prots.fasta -o spn_clustered_prots.fasta -c 0.98 -T 8 -p 1" #add full path to CD-HIT
     print("Starting clustering of proteins...")
     os.system(cmd)
 
