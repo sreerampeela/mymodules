@@ -16,7 +16,8 @@ full_data = []
 for i in range(5):
     graph_new = "rand_" + str(i)
     gaph_rand = nx.read_adjlist(graph_new)
-    graph_rand = nx.double_edge_swap(original_graph.to_undirected(), nswap=1000, max_tries=10000, seed=1987)
+    graph_rand = nx.double_edge_swap(original_graph.to_undirected(), nswap=(nx.number_of_edges(original_graph)*0.2), max_tries=10000, seed=None)
+    graph_rand.remove_edges_from(nx.selfloop_edges(graph_rand))
     nx.write_adjlist(graph_rand,graph_new,delimiter='\t')
     data = nx.betweenness_centrality(gaph_rand) # returns a dict with gene, value pairs
     full_data.append(data) # append each network metrics to the data list
