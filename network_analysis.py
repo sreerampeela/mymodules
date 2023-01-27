@@ -13,7 +13,7 @@ print(nx.number_of_nodes(original_graph))
 
 # Creating data for random graphs using double edge swap
 full_data = []
-for i in range(5):
+for i in range(10000):
     graph_new = "rand_" + str(i)
     gaph_rand = nx.read_adjlist(graph_new)
     graph_rand = nx.double_edge_swap(original_graph.to_undirected(), nswap=(nx.number_of_edges(original_graph)*0.2), max_tries=10000, seed=None)
